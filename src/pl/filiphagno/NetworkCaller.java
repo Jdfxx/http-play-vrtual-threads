@@ -3,13 +3,6 @@ package com.mudra;
 import java.io.InputStream;
 import java.net.URI;
 
-/**
- * This class simulates a Network Call with delay using
- * the site http://httpbin.org/delay/<secs>
- * 
- * @author vshetty
- *
- */
 public class NetworkCaller {
 	
 	private String callName;
@@ -31,7 +24,5 @@ public class NetworkCaller {
 		finally {
 			System.out.println(callName + " : END call : " + Thread.currentThread());
 		}
-		
 	}
-
 }
