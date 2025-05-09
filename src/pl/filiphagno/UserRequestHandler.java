@@ -9,7 +9,7 @@ public class UserRequestHandler implements Callable<String> {
 
 	@Override
 	public String call() throws Exception {
-		return sequentialCall();
+		return concurrentCallCompletableFuture();
 		
 	}
 
@@ -38,7 +38,6 @@ public class UserRequestHandler implements Callable<String> {
 			
 			System.out.println(output);
 			return output;
-			
 		}
 	}
 
