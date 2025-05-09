@@ -1,11 +1,8 @@
 package com.mudra;
 
+import java.time.Duration;
 import java.util.Arrays;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 public class UserRequestHandler implements Callable<String> {
@@ -108,6 +105,8 @@ public class UserRequestHandler implements Callable<String> {
 		
 		String result1 = dbCall(); // 2 secs
 		String result2 = restCall();  // 5 secs
+
+		Thread.sleep(Duration.ofMinutes(10).toMillis());
 		
 		String result = String.format("[%s,%s]", result1, result2);
 		
